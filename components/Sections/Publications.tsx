@@ -9,12 +9,12 @@ interface PublicationsProps {
 const Publications: React.FC<PublicationsProps> = ({ openModal }) => {
   const [showAll, setShowAll] = useState(false);
 
-  // 使用物件映射代替函數回傳，這能確保 Tailwind 編譯器 100% 抓取到這些類名
+  // 定義完整的 Tailwind 類名，確保編譯器能正確識別並產生 CSS
   const colorMap = {
     primary: {
-      border: 'border-l-primary',
-      badge: 'text-primary bg-primary/10',
-      highlight: 'text-primary'
+      border: 'border-l-[#38bdf8]',
+      badge: 'text-[#38bdf8] bg-[#38bdf8]/10',
+      highlight: 'text-[#38bdf8]'
     },
     purple: {
       border: 'border-l-purple-500',
@@ -51,7 +51,6 @@ const Publications: React.FC<PublicationsProps> = ({ openModal }) => {
             const colors = colorMap[pub.styleColor || 'primary'];
             return (
               <Reveal key={pub.id} delay={index * 0.1}>
-                {/* 移除 glass-card 中的自定義邊框，改用 tailwind 原生類名避免衝突 */}
                 <div className={`bg-slate-800/50 backdrop-blur-md border border-white/10 p-0 rounded-xl border-l-4 ${colors.border} hover:bg-slate-800/80 transition-all duration-300 overflow-hidden shadow-xl`}>
                   <div className="flex flex-col md:flex-row">
                     <div className="p-6 md:w-2/3">
