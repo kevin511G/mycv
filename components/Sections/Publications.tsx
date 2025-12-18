@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Publication } from '../../types';
 import { TOP_PUBLICATIONS, MORE_PUBLICATIONS } from '../../constants';
 import Reveal from '../Reveal';
 
