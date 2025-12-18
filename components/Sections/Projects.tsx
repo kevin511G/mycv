@@ -16,7 +16,7 @@ const Projects: React.FC<ProjectsProps> = ({ openModal }) => {
           <p className="mt-4 text-slate-400">從物理原理到軟硬體整合的全端工程展示</p>
         </Reveal>
 
-        {PROJECTS.map((project, index) => (
+        {PROJECTS.map((project) => (
           <div key={project.id} className="mb-24">
             {project.layout === 'center' ? (
               // Center layout (Video style)
